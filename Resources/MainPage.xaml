@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HolaMundo.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="20,2"
+            Spacing="20">
+            <!-- Message  validation of PASSWORD -->
+            <Label
+                Text="Validaci&#243;n de contrase&#241;a"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2" />
+            <!--  Reglas que debe cumplir el PASSWORD -->
+            <Label
+                x:Name="PasswordRulesLabel"
+                Text="Contener al menos una may&#250;scula, una min&#250;scula, un s&#237;mbolo y un n&#250;mero."
+                SemanticProperties.Description="Es necesario que contenga minimo una mayuscula, una minuscula, un simbolo y un numero" />
+            <!-- Input que recibe la PASSWORD -->
+            <Entry
+                x:Name="PasswordEntry"
+                Placeholder="Contrase&#241;a"
+                IsPassword="True"
+                SemanticProperties.Hint="Primer campo de la PASSWORD" />
+            <!-- Input para recibir  confirmación de la password -->
+            <Entry
+                x:Name="ConfirmPasswordEntry"
+                Placeholder="Repetir password"
+                IsPassword="True"
+                SemanticProperties.Hint="Segundo campo de la password" />
+            <!-- El boton validate en su evento clicked manda a llamar la funcion OnValidateClicked que se 
+            encuentra en el .cs -->
+            <Button
+                x:Name="ValidateBtn"
+                Text="Validar"
+                Clicked="OnValidateClicked"
+                HorizontalOptions="Fill"
+                SemanticProperties.Hint="Envia el formulario y retorna la validación" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
